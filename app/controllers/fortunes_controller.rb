@@ -2,6 +2,7 @@ class FortunesController < ApplicationController
   def horoscopes
     all_zodiacs = Zodiac.list
     this_zodiac = all_zodiacs.fetch(params.fetch("the_sign").to_sym)
+    
     @horoscope = this_zodiac.fetch(:horoscope)
       
     @array_of_numbers = Array.new
